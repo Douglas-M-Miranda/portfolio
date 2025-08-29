@@ -1,0 +1,42 @@
+.menu {
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: .5em 1em;
+    height: max-content;
+
+    span {
+        font-family: "Lato", sans-serif;
+        font-size: 1.5rem;
+        font-weight: bold;
+
+    }
+}
+
+.containerItems {
+    // background-color: pink;
+    list-style: none;
+
+    display: flex;
+    gap: 15px;
+
+    .menuItem {
+        background-color: pink;
+        
+        color: yellow;
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.1rem;
+        
+        padding: .5em;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            
+        }
+    }
+}
