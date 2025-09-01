@@ -1,5 +1,7 @@
+@use '/src/styles/variables' as var;
+
 .menu {
-    background-color: aquamarine;
+    background-color: var.$primary-color; //purple color
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,35 +10,61 @@
     height: max-content;
 
     span {
-        font-family: "Lato", sans-serif;
+        font-family: var.$title-fontFamily;
         font-size: 1.5rem;
         font-weight: bold;
+        color: var.$focus-color; //green color
 
+        user-select: none;
+        cursor: pointer;
     }
 }
 
 .containerItems {
-    // background-color: pink;
     list-style: none;
 
     display: flex;
     gap: 15px;
 
-    .menuItem {
-        background-color: pink;
-        
-        color: yellow;
-        text-decoration: none;
-        font-family: "Montserrat", sans-serif;
-        font-size: 1.1rem;
-        
-        padding: .5em;
+    li {
         position: relative;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-3px);
+        }
 
         &::after {
-            content: "";
+            content: '';
+
             position: absolute;
-            
+            bottom: -5px;
+            left: 0;
+            z-index: -1;
+            transform: scaleY(0);
+
+            background-color: var.$focus-color; //green color
+
+            height: 4px;
+            width: 100%;
+
+            transform-origin: bottom;
+            transition: transform 0.3s ease;
         }
+
+        &:hover::after {
+            transform: scaleY(1);
+        }
+    }
+
+    .menuItem {
+        text-decoration: none;
+        font-family: var.$text-fontFamily;
+        font-size: 1.1rem;
+        font-weight: 300;
+        color: #f3eaff;
+
+        padding: .5em;
+        position: relative;
     }
 }
