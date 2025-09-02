@@ -1,0 +1,46 @@
+@use '/src/styles/variables' as var;
+
+.containerPresentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 3em;
+
+    .summary {
+        h2 {
+            font-family: var.$title-fontFamily;
+            font-size: 2.3rem;
+            font-weight: bolder;
+            text-align: center;
+            color: var.$text-color-backgroundWhite;
+
+            text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                         0px 8px 13px rgba(0,0,0,0.1),
+                         0px 18px 23px rgba(0,0,0,0.1);
+        }
+
+        p {
+            font-family: var.$text-fontFamily;
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var.$text-color-backgroundWhite;
+
+            margin-top: .7em;
+        }
+
+        span {
+            font-family: var.$focus-fontFamily;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var.$focus-color;
+        }
+    }
+
+    .draw {
+        img {
+            height: 25em;
+            margin-top: 3em;
+        }
+    }
+}
