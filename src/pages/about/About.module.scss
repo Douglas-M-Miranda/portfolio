@@ -1,0 +1,118 @@
+@use '/src/styles/variables' as var;
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.containerAbout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 50em;
+    margin: 0 auto;
+
+    .imageAbout {
+        img {
+            height: 25em;
+            margin: 3em 0 2em 0;
+        }
+    }
+
+    .textAbout {
+        p {
+            font-family: var.$text-fontFamily;
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.4;
+            color: var.$text-color-backgroundWhite;
+
+            &:last-child {
+                margin-bottom: 4em;
+            }
+        }
+    }
+
+    .technicsAbout {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+
+        .containerTechnology {
+            background-color: #e4e4e4;
+
+            padding: .5em;
+            margin: 1em;
+
+            position: relative;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+
+                background: linear-gradient(var(--angle), rgba(101, 0, 232, 1) 10%, rgba(133, 235, 0, 1) 100%);
+                border-radius: 5px;
+                height: 110%;
+                width: 110%;
+
+            }
+
+            &:hover::after {
+                cursor: pointer;
+                animation: 1s rotate linear infinite;
+            }
+
+            img {
+                height: 5em;
+            }
+        }
+
+        .containerDetails {
+            background-color: var.$primary-color;
+            border-radius: 10px;
+
+            position: absolute;
+            left: 10%;
+            top: 40%;
+            z-index: 1;
+
+            width: 80%;
+            height: max-content;
+            padding: 1em;
+
+            p {
+                font-family: var.$text-fontFamily;
+                font-size: 1.5rem;
+                font-weight: 300;
+                line-height: 1.4;
+                color: var.$text-color-backgroundPurple;
+            }
+
+            .exit {
+                position: absolute;
+                right: 10px;
+                top: 5px;
+
+                cursor: pointer;
+                color: var.$focus-color;
+            }
+        }
+    }
+}
+
+@keyframes rotate {
+    to {
+        --angle: 0deg;
+    }
+
+    from {
+        --angle: 360deg;
+    }
+}
