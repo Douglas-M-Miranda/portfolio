@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import avatarDrawing from '../../assets/undraw_developer_avatar.svg'
-import logo from '../../components/imageBank/ImageBank'
+import Technologybank from '../../components/Technologybank/Technologybank'
 import styles from './About.module.scss'
+import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
 
+
 function About() {
-    const [detailhsUp, setDetailhsUp] = useState<boolean>(false);
+    const [detailhsUp, setDetailhsUp] = useState<number | null>(null);
     console.log(detailhsUp)
 
     return (
@@ -24,130 +26,48 @@ function About() {
             </article>
 
             <article className={styles.technicsAbout}>
-                <div>
-                    <div
-                        onClick={() => !detailhsUp && setDetailhsUp(!detailhsUp)}
-                        className={styles.containerTechnology}>
-                        <img src={logo.html} alt="" />
-                    </div>
-                    {detailhsUp && (
+
+                {Technologybank.map((tech) => (
+                    <div>
                         <div
-                        // style={{ display: detailhsUp ? 'block' : 'none' }}
-                        className={styles.containerDetails}>
-                        <p>
-                            HTML
-                        </p>
+                            onClick={() => {
+                                if (detailhsUp === 0 || detailhsUp === null) {
+                                    setDetailhsUp(tech.id)
+                                }
+                            }}
+                            className={styles.containerTechnology}
+                        >
+                            <img src={tech.image} alt="" />
+                        </div>
 
-                        <X
-                            onClick={() => setDetailhsUp(!detailhsUp)}
-                            className={styles.exit} />
+                        <AnimatePresence mode="wait">
+                            {detailhsUp !== null && (
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.5 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.5 }}
+                                    transition={{ ease: "easeOut", duration: 0.15 }}
+                                    style={{ display: detailhsUp ? 'block' : 'none' }}
+                                    className={styles.containerDetails}
+                                >
+                                    <motion.p
+                                    initial={{ opacity: 0, translateY: 10 }}
+                                    animate={{ opacity: 1, translateY: 0  }}
+                                    exit={{ opacity: 0, translateY: 10 }}
+                                    transition={{ ease: "easeOut", duration: 0.3, delay: 0.3 }}
+                                    >
+                                        {Technologybank.find((t) => t.id === detailhsUp)?.history}
+                                    </motion.p>
+                                    <X
+                                        className={styles.exit}
+                                        onClick={() => setDetailhsUp(null)}
+                                    />
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </div>
-                    )}
-                </div>
+                ))}
 
-                <div>
-                    <div
-                        onClick={() => !detailhsUp && setDetailhsUp(!detailhsUp)}
-                        className={styles.containerTechnology}>
-                        <img src={logo.css} alt="" />
-                    </div>
-                    <div
-                        style={{ display: detailhsUp ? 'block' : 'none' }}
-                        className={styles.containerDetails}>
-                        <p>
-                            CSS
-                        </p>
-
-                        <X
-                            onClick={() => setDetailhsUp(!detailhsUp)}
-                            className={styles.exit} />
-                    </div>
-                </div>
-
-                <div>
-                    <div
-                        onClick={() => !detailhsUp && setDetailhsUp(!detailhsUp)}
-                        className={styles.containerTechnology}>
-                        <img src={logo.javaScript} alt="" />
-                    </div>
-                    <div
-                        style={{ display: detailhsUp ? 'block' : 'none' }}
-                        className={styles.containerDetails}>
-                        <p>1Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eligendi odit pariatur, rem ullam dolorum officiis repellat deserunt, enim quas aspernatur eveniet, ipsa alias nesciunt rerum mollitia velit ea perspiciatis.</p>
-
-                        <X
-                            onClick={() => setDetailhsUp(!detailhsUp)}
-                            className={styles.exit} />
-                    </div>
-                </div>
-
-                <div>
-                    <div
-                        onClick={() => !detailhsUp && setDetailhsUp(!detailhsUp)}
-                        className={styles.containerTechnology}>
-                        <img src={logo.react} alt="" />
-                    </div>
-                    <div
-                        style={{ display: detailhsUp ? 'block' : 'none' }}
-                        className={styles.containerDetails}>
-                        <p>2Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eligendi odit pariatur, rem ullam dolorum officiis repellat deserunt, enim quas aspernatur eveniet, ipsa alias nesciunt rerum mollitia velit ea perspiciatis.</p>
-
-                        <X
-                            onClick={() => setDetailhsUp(!detailhsUp)}
-                            className={styles.exit} />
-                    </div>
-                </div>
-
-                <div>
-                    <div
-                        onClick={() => !detailhsUp && setDetailhsUp(!detailhsUp)}
-                        className={styles.containerTechnology}>
-                        <img src={logo.typeScript} alt="" />
-                    </div>
-                    <div
-                        style={{ display: detailhsUp ? 'block' : 'none' }}
-                        className={styles.containerDetails}>
-                        <p>3Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eligendi odit pariatur, rem ullam dolorum officiis repellat deserunt, enim quas aspernatur eveniet, ipsa alias nesciunt rerum mollitia velit ea perspiciatis.</p>
-
-                        <X
-                            onClick={() => setDetailhsUp(!detailhsUp)}
-                            className={styles.exit} />
-                    </div>
-                </div>
-
-                <div>
-                    <div
-                        onClick={() => !detailhsUp && setDetailhsUp(!detailhsUp)}
-                        className={styles.containerTechnology}>
-                        <img src={logo.sass} alt="" />
-                    </div>
-                    <div
-                        style={{ display: detailhsUp ? 'block' : 'none' }}
-                        className={styles.containerDetails}>
-                        <p>4Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eligendi odit pariatur, rem ullam dolorum officiis repellat deserunt, enim quas aspernatur eveniet, ipsa alias nesciunt rerum mollitia velit ea perspiciatis.</p>
-
-                        <X
-                            onClick={() => setDetailhsUp(!detailhsUp)}
-                            className={styles.exit} />
-                    </div>
-                </div>
-
-                <div>
-                    <div
-                        onClick={() => !detailhsUp && setDetailhsUp(!detailhsUp)}
-                        className={styles.containerTechnology}>
-                        <img src={logo.git} alt="" />
-                    </div>
-                    <div
-                        style={{ display: detailhsUp ? 'block' : 'none' }}
-                        className={styles.containerDetails}>
-                        <p>5Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eligendi odit pariatur, rem ullam dolorum officiis repellat deserunt, enim quas aspernatur eveniet, ipsa alias nesciunt rerum mollitia velit ea perspiciatis.</p>
-
-                        <X
-                            onClick={() => setDetailhsUp(!detailhsUp)}
-                            className={styles.exit} />
-                    </div>
-                </div>
             </article>
         </section>
     );

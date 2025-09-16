@@ -9,7 +9,7 @@ function NavBar() {
             <ul className={styles.containerItems}>
                 <li><Link to="/" className={styles.menuItem}>Home</Link></li>
                 <li><Link to="/sobre" className={styles.menuItem}>Sobre</Link></li>
-                <li><Link to="/" className={styles.menuItem}>Projetos</Link></li>
+                <li><Link to="/projetos" className={styles.menuItem}>Projetos</Link></li>
                 <li><Link to="/" className={styles.menuItem}>Contato</Link></li>
             </ul>
         </nav>

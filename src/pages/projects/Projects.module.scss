@@ -1,0 +1,108 @@
+@use '../../styles/variables' as var;
+
+.containerProjetsItems {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(20px, 12em));
+    gap: 10px;
+    justify-content: center;
+
+    margin-top: 2em;
+
+    .projectDetails {
+        background-color: whitesmoke;
+        padding: .3em;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .projectImage {
+
+            img {
+                height: 10em;
+                width: 100%;
+
+                cursor: pointer;
+
+                transition: transform .3s ease-out;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .projectDescription {
+            background-color: #ffffff;
+
+            p {
+                font-family: var.$text-fontFamily;
+                font-size: .9rem;
+                font-weight: 400;
+                color: var.$text-color-backgroundWhite;
+                padding: .5em;
+            }
+        }
+    }
+
+    .containerAmplifiedImage {
+        
+        .overlay {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            text-align: center;
+      
+            .amplifiedImage {
+                height: 25em;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+
+        .exit {
+            position: absolute;
+            top: 30%;
+            right: 2%;
+            transform: translate(-30%, -2%);
+            cursor: pointer;
+        }
+    }
+
+    .containerIcons {
+        padding: .2em;
+        background-color: whitesmoke;
+        .iconCode, .iconPage {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            span {
+                font-family: var.$title-fontFamily;
+                font-size: .8rem;
+                font-weight: bold;
+                color: var.$focus-color;
+            }
+            
+            a {
+                color: var.$primary-color;
+                transition: all .2s ease-in;
+
+                &:hover {
+                    transform: scale(1.2);
+                    color: #6f00ff; 
+                }
+            }
+        }
+
+    }
+}

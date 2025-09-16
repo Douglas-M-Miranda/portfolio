@@ -3,6 +3,7 @@ import './styles/App.scss'
 import NavBar from './components/navbar/NavBar'
 import Home from './pages/home/Home'
 import About from './pages/about/About'
+import Projets from './pages/projects/Projects'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/sobre' element={<About />} />
+          <Route path='/projetos' element={<Projets />} />
         </Routes>
       </BrowserRouter>
     </>
