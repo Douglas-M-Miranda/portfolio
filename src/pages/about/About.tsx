@@ -46,7 +46,7 @@ function About() {
                                     initial={{ opacity: 0, scale: 0.5 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.5 }}
-                                    transition={{ ease: "easeOut", duration: 0.15 }}
+                                    transition={{ ease: "easeIn", duration: 0.2 }}
                                     style={{ display: detailhsUp ? 'block' : 'none' }}
                                     className={styles.containerDetails}
                                 >
