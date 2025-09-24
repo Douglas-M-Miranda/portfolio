@@ -1,69 +1,41 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# portfolio 
 
-Currently, two official plugins are available:
+Web application developed with React + TypeScript + Sass, created to showcase my projects, my career in front-end development, and contact details.
+The website includes pages such as Home, About, and Projects, featuring a responsive design tailored for recruiters and companies.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Project Screenshot](src/assets/Screenshot_project.png)  
+*Homepage displaying the currency Converter.*
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧩 Technologies Used
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **HTML5** – Semantic structure of the application  
+- **CSS3** – Styling and responsiveness  
+- **Lucide React** - Library for displaying icons and symbols
+- **motion** - Library for animation and Transitions
+- **react-router-dom** - Library for Page routing
+- **TypeScript** - Adds static typing for safer and more maintainable code
+- **React** – Library for building the user interface  
+  - **Array methods** – Data manipulation (e.g.,`map`)  
+  - **react-select** – Customizable select input component
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Features
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+ 1. Home page with introduction and main highlight. 
+ 2. About page with personal summary and Front-End career history.
+ 3. Projects page listing works, with links to repository and deploy.
+ 4. Navigation with **React Router**.
+ 5. Animation and Transition with **motion**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📥 Installation and Running
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/portfolio.git
+
