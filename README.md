@@ -5,7 +5,7 @@ Web application developed with React + TypeScript + Sass, created to showcase my
 The website includes pages such as Home, About, and Projects, featuring a responsive design tailored for recruiters and companies.
 
 ![Project Screenshot](src/assets/Screenshot_project.png)  
-*Homepage displaying the currency Converter.*
+*Homepage portfolio.*
 
 ---
 
