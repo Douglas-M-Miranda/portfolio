@@ -1,6 +1,6 @@
 import styles from './Projects.module.scss'
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, easeIn } from 'motion/react';
 import { X, CodeXml, Link } from 'lucide-react';
 import projectsList from '../../components/projectsBank/ProjectsBank'
 
@@ -12,11 +12,16 @@ function Projets() {
         <section className={styles.containerProjets}>
             <article className={styles.containerProjetsItems}>
                 {projectsList.map((project) => (
-                    <div
+                    <motion.div
                         key={project.id}
                         className={styles.projectDetails}
+                        initial={{ opacity: 0, y: 300 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ ease: easeIn, duration: .8 }}
                     >
-                        <div className={styles.projectImage}>
+                        <div
+                            className={styles.projectImage}
+                        >
                             <img
                                 src={project.image}
                                 alt=""
@@ -37,17 +42,17 @@ function Projets() {
                                 <span>
                                     Código no GitHub
                                 </span>
-                                <a href={project.linkCode} target='_blank'><CodeXml size={19}/></a>
+                                <a href={project.linkCode} target='_blank'><CodeXml size={19} /></a>
                             </div>
 
                             <div className={styles.iconPage}>
                                 <span>
                                     Ver online
                                 </span>
-                                <a href={project.linkPage} target='_blank'><Link size={19}/></a>
+                                <a href={project.linkPage} target='_blank'><Link size={19} /></a>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
                 <div className={styles.containerAmplifiedImage}>
                     <AnimatePresence mode="wait">
@@ -62,13 +67,18 @@ function Projets() {
                                     transition={{ ease: "easeOut", duration: 0.2 }}
                                 >
                                     <img
-                                        src={projectsList.find((t) => t.id === selectedProject)?.image}
                                         className={styles.amplifiedImage}
+                                        src={projectsList.find((t) => t.id === selectedProject)?.image}
                                         alt=""
+                                    />
+
+                                    <X
+                                        className={styles.exit}
+                                        onClick={() => setSelectedProject(null)}
                                     />
                                 </motion.div>
 
-                                <motion.div
+                                {/* <motion.div
                                     key={`exit-${selectedProject}`}
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1, transition: { ease: "easeOut", duration: 0.8, delay: 0.4 } }}
@@ -78,11 +88,28 @@ function Projets() {
                                         className={styles.exit}
                                         onClick={() => setSelectedProject(null)}
                                     />
-                                </motion.div>
+                                </motion.div> */
+
+
+                                    //                                 <motion.div
+                                    //     key={`exit-${selectedProject}`}
+                                    //     initial={{ opacity: 0 }}
+                                    //     animate={{ opacity: 1, transition: { ease: "easeOut", duration: 0.8, delay: 0.4 } }}
+                                    //     exit={{ opacity: 0, transition: { ease: "easeOut", duration: 0 } }}
+                                    // >
+                                    //     <X
+                                    //         className={styles.exit}
+                                    //         onClick={() => setSelectedProject(null)}
+                                    //     />
+                                    // </motion.div>
+
+
+
+                                }
                             </>
                         )}
                     </AnimatePresence>
-                    
+
                 </div>
 
             </article>

@@ -34,6 +34,10 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: var.$focus-color;
+
+            &::before {
+                content: " ";
+            }
         }
     }
 
@@ -41,6 +45,58 @@
         img {
             height: 25em;
             margin-top: 3em;
+        }
+    }
+}
+
+@media (min-width: 320px) {
+    .containerPresentation {
+        margin-top: 2em;
+
+        .summary {
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+        }
+
+        .draw {
+            img {
+                height: 14em;
+                margin-top: 3em;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .containerPresentation {
+        margin-top: 3em;
+
+        .summary {
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.7rem;
+                text-align: center;
+            }
+
+            span {
+                font-size: 2.1rem;
+            }
+        }
+
+        .draw {
+            img {
+                height: 25em;
+                margin-top: 4em;
+            }
         }
     }
 }

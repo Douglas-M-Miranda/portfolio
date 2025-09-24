@@ -48,35 +48,26 @@
     }
 
     .containerAmplifiedImage {
-        
         .overlay {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-            text-align: center;
+            position: absolute;
+            height: 25em;
+            top: 25%;
+            left: 4%;
       
             .amplifiedImage {
-                height: 25em;
+                height: 100%;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+                border-radius: 10px;
+            }
+            
+            .exit {
                 position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
             }
         }
 
-
-        .exit {
-            position: absolute;
-            top: 30%;
-            right: 2%;
-            transform: translate(-30%, -2%);
-            cursor: pointer;
-        }
     }
 
     .containerIcons {
@@ -104,5 +95,72 @@
             }
         }
 
+    }
+}
+
+@media (min-width: 320px) {
+    .containerProjetsItems {
+        grid-template-columns: repeat(1, minmax(25px, 15em));
+        
+        .containerAmplifiedImage {
+            .overlay {
+                height: 9em;
+
+                .amplifiedImage {
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .containerProjetsItems {
+        grid-template-columns: repeat(2, minmax(25px, 18em));
+
+        .containerAmplifiedImage {
+            .overlay {
+                left: 6.5%;
+                height: 20.5em;
+            }
+        }
+    }
+}
+
+@media (min-width: 884px) {
+    .containerProjetsItems {
+        .containerAmplifiedImage {
+            .overlay {
+                left: 4%;
+                height: 25em;
+            }
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+    .containerProjetsItems {
+        grid-template-columns: repeat(3, minmax(25px, 18em));
+
+        .containerAmplifiedImage {
+            .overlay {
+                left: 11%;
+                height: 30em;
+            }
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+    .containerProjetsItems {
+        grid-template-columns: repeat(4, minmax(25px, 18em));
+
+        .containerAmplifiedImage {
+            .overlay {
+                top: 20%;
+                left: 20%;
+                height: 35em;
+            }
+        }
     }
 }

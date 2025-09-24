@@ -11,7 +11,7 @@
     flex-direction: column;
     align-items: center;
 
-    width: 50em;
+    // width: 50em;
     margin: 0 auto;
 
     .imageAbout {
@@ -30,7 +30,7 @@
             color: var.$text-color-backgroundWhite;
 
             &:last-child {
-                margin-bottom: 4em;
+                margin-bottom: .5em;
             }
         }
     }
@@ -115,5 +115,63 @@
 
     from {
         --angle: 360deg;
+    }
+}
+
+@media (min-width: 320px) {
+    .containerAbout {
+        .imageAbout {
+            margin: 0 auto;
+            img {
+                height: 18em;
+                margin: 2em 0 2em 0;
+            }
+        }
+
+        .textAbout {
+            font-size: 1rem;
+            padding: .5em;
+        }
+
+        .technicsAbout {
+            grid-template-columns: repeat(2, 1fr);
+
+            .containerDetails {
+                top: 65%;
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .containerAbout {
+        .imageAbout {
+            img {
+                height: 25em;
+            }
+        }
+
+        .textAbout {
+            p {
+                font-size: 1.6rem;
+                padding: .5em;
+            }
+        }
+
+        .technicsAbout {
+            grid-template-columns: repeat(4, 1fr);
+
+            .containerDetails {
+                top: 70%;
+
+                p {
+                    font-size: 1.7rem;
+                }
+            }
+        }
     }
 }
